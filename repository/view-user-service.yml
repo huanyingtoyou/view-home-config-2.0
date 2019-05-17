@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: view-user-service
+management:
+  security:
+    enabled: false
+
+debug: true
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.sleuth: DEBUG
+    org.springframework.web: DEBUG
+    com.lihy.view.user.controller: WARN
+    com.lihy.view.user.mapper: DEBUG
+  #file: logs/spring-cloud-logging.log

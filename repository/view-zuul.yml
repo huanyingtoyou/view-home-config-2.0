@@ -1,0 +1,28 @@
+#zuul的路由配置
+zuul:
+  routes:
+    user-route:
+      serviceId: view-user-service
+      path: /user-service/**
+    file-upload-route:
+      serviceId: view-photo-service
+      path: /photo-service/**
+  #是否开启重试功能
+  retryable: true
+#开启重试机制
+spring:
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+ribbon:
+  #请求连接的超时时间
+  ConnectTimeout: 300
+  #请求处理的超时时间
+  ReadTimeout: 1000
+  #对所有请求都重试
+  OkToRetryOnAllOperations: true
+  #对当前实例的重试次数
+  MaxAutoRetries: 1
+  #对下个实例的重试次数
+  MaxAutoRetriesNextServer: 1

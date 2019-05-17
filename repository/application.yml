@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://lihy:520@localhost:8088/eureka/
+      #集群模式
+      #defaultZone: http://lihy:520@eureka1:8088/eureka/,http://lihy:520@eureka2:8089/eureka/,http://lihy:520@eureka3:8090/eureka/
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
+    #自定义微服务的instanceId
+    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+
+#测试自动刷新的配置属性
+profile: lihy
+
+spring:
+  #rabbitmq配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  #zipkin服务地址及采样比例
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+#feign远程调用配置开启熔断
+feign:
+  hystrix:
+    enabled: true
+#hystrix熔断机制
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            #断路器的超时时间需要大于ribbon的超时时间，不然不会触发重试
+            timeoutInMilliseconds: 9000

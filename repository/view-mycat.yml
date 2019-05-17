@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    druid:
+      #数据库驱动
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password:
+      #mycat的逻辑库
+      url: jdbc:mysql://localhost:8066/TESTDB?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+
+# mybatis mapper xml 配置
+mybatis:
+  mapper-locations: classpath:mybatis/**/*.xml
