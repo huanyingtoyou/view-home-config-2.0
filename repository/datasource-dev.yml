@@ -4,7 +4,7 @@ spring:
     # autoReconnect=true自动重连(mysql5以上无效)，allowMultiQueries=true支持批量更新
     url: jdbc:mysql://localhost:3306/view?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
     username: root
-    password:
+    password: lihy#520
   cloud:
     config:
       profile: dev
