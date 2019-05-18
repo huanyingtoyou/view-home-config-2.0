@@ -23,6 +23,7 @@ spring:
     password: guest
   #zipkin服务地址及采样比例
   zipkin:
+    enabled: true
     base-url: http://localhost:9411
     locator:
       discovery:
