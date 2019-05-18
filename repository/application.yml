@@ -24,9 +24,19 @@ spring:
   #zipkin服务地址及采样比例
   zipkin:
     base-url: http://localhost:9411
-  #sleuth:
-    #sampler:
-      #percentage: 1.0
+    locator:
+      discovery:
+        enabled: true
+    sender:
+      type: WEB
+  sleuth:
+    web:
+      client:
+        enabled: true
+    #默认的采样比率为0.1，不能看到所有请求数据
+    #更改采样比率为1，可以看到所有的请求数据，但是会增加接口调用延迟
+    sampler:
+      percentage: 1.0
 
 #feign远程调用配置开启熔断
 feign:
