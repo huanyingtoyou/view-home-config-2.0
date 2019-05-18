@@ -24,9 +24,9 @@ spring:
   #zipkin服务地址及采样比例
   zipkin:
     base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      percentage: 1.0
+  #sleuth:
+    #sampler:
+      #percentage: 1.0
 
 #feign远程调用配置开启熔断
 feign:
