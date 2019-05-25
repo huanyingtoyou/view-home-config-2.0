@@ -12,7 +12,7 @@ eureka:
     prefer-ip-address: true
 
 #测试自动刷新的配置属性
-profile: lihy111
+profile: lihy
 
 spring:
   #rabbitmq配置
