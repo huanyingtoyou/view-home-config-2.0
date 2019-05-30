@@ -16,11 +16,11 @@ profile: lihy
 
 spring:
   #rabbitmq配置
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  #rabbitmq:
+    #host: localhost
+    #port: 5672
+    #username: guest
+    #password: guest
   #zipkin服务地址及采样比例
   zipkin:
     enabled: true
@@ -56,6 +56,7 @@ hystrix:
           thread:
             #断路器的超时时间需要大于ribbon的超时时间，不然不会触发重试
             timeoutInMilliseconds: 9000
+#2.X版本暴露端点
 management:
   endpoints:
     web:

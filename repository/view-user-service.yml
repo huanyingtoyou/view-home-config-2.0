@@ -1,9 +1,10 @@
 spring:
   application:
     name: view-user-service
-management:
-  security:
-    enabled: false
+#在1.5.x版本中通过management.security.enabled=false来暴露所有端点
+#management:
+  #security:
+    #enabled: false
 
 debug: true
 logging:

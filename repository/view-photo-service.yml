@@ -7,6 +7,7 @@ spring:
       max-file-size: 2000Mb
       #Max request size，默认10M
       max-request-size: 2500Mb
-management:
-  security:
-    enabled: false
+#在1.5.x版本中通过management.security.enabled=false来暴露所有端点
+#management:
+  #security:
+    #enabled: false
